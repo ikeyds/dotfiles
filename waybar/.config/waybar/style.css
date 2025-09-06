@@ -1,19 +1,16 @@
 @import "mocha.css"; 
 
 * {
-    font-family: "MesloLGS Nerd Font Mono Bold";
-    font-size: 16px;
-    min-height: 0;
-    font-weight: bold;
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, JetBrains Mono NF, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
 }
 
 window#waybar {
-    background: transparent;
-    background-color: @crust;
-    color: @overlay0;
+    background-color: rgba(43, 48, 59, 0.0);
+    color: #ffffff;
     transition-property: background-color;
-    transition-duration: 0.1s;
-    border-bottom: 1px solid @overlay1;
+    transition-duration: .5s;
 }
 
 #window {
