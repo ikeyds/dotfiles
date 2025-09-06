@@ -1,153 +1,127 @@
-// -*- mode: jsonc -*-
-{
-    "layer": "top", // Waybar at top layer
-    "height": 30, // Waybar height (to be removed for auto height)
-    "spacing": 0, // Gaps between modules (4px)
-    "margin-top": "10px",       // Margin from top edge
-    "margin-left": "10px",      // Margin from left edge
-    "margin-right": "10px",     // Margin from right edge
-    "width": "calc(100% - 20px)", // Adjust width to account for margins
-    "mode": "dock",
-    "exclusive": true,     // Allow gaps around the bar
-    "passthrough": false,    // Block clicks on empty areas
-    // Choose the order of the modules
-    "modules-left": [
-        "custom/arch",
-        "hyprland/workspaces",
-        "custom/spacer-right",
-        "cava",
-    ],
-    "modules-right": [
-        "custom/pulseaudiotext",
-        "pulseaudio",
-        "custom/pulseaudio2",
-        "custom/networktext",
-        "network",
-        "custom/memorytext",
-        "memory",
-        "custom/languagetext",
-        "hyprland/language",
-        "custom/clocktext",
-        "clock",
-        "custom/power"
-    ],
-    // Modules configuration
-    "custom/languagetext": {
-    "format" : "󰌌",
-    },
-    "hyprland/language": {
-        "format": "{short}"
-    },
-     "hyprland/workspaces": {
-         "disable-scroll": true,
-         "all-outputs": true,
-         "active-only": false,
-         "persistent": true,
-         "warp-on-scroll": false,
-         "format": "{icon}",
-         "format-icons": {
-             "1": "",
-             "2": "",
-             "3": "",
-             "4": "",
-             "5": "",
-             "6": "",
-             "7": "",
-             "8": "",
-             "9": "",
-             "urgent": " ",
-             "default": " "
-         },
-        "on-click": "activate",   // Switch workspace on click
-        "sort-by-number": true    // Sort workspaces numerically
-     },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10,
-        // "icons": {
-        //   "blueman": "bluetooth",
-        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-        // }
-    },
-    "custom/clocktext": {
-    "format" : "󰥔",
-},
-    "clock": {
-        "format": "{:%I:%M%p}",
-        "icon": "/home/yousef/protein-svgrepo-com.svg",
-        "on-click": "eww open date --toggle",
-        "tooltip": false
-    },
-    "custom/memorytext": {
-    "format" :""
-},
-    "memory": {
-        "format": "{}%"
-    },
-    "custom/networktext": {
-    "format" : "",
-},
-    "network": {
-        "format-ethernet": "connected",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
+@import "mocha.css"; 
 
-    "custom/pulseaudiotext": {
-        "format" : "",
-    },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    },
-    "custom/arch": {
-    "format": "󰣇 ",
-    },
-    "cava": {
-        "cava_config": "/home/yousef/.config/cava/config",
-        "framerate": 30,
-        "autosens": 1,
-        "sensitivity": 2,
-        "bars": 40,
-        "lower_cutoff_freq": 50,
-        "higher_cutoff_freq": 10000,
-        "method": "pulse",
-        "source": "auto",
-        "stereo": true,
-        "reverse": false,
-        "bar_delimiter": 0,
-        "monstercat": false,
-        "waves": false,
-        "noise_reduction": 0.77,
-        "input_delay": 0,
-        "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
-        "on-click": "eww open music --toggle",
-    },
-    "custom/seperator": {
-        "type": "custom/text",
-        "format": ":", // Same as spacer-left
-        "tooltip": false
-    },
-    "custom/power": {
-        "format" : "⏻ ",
-		"tooltip": false,
-        "on-click": "rofi -show power-menu -show-icons -modi power-menu:rofi-power-menu"
-    },
+* {
+    font-family: "MesloLGS Nerd Font Mono Bold";
+    font-size: 16px;
+    min-height: 0;
+    font-weight: bold;
+}
+
+window#waybar {
+    background: transparent;
+    background-color: @crust;
+    color: @overlay0;
+    transition-property: background-color;
+    transition-duration: 0.1s;
+    border-bottom: 1px solid @overlay1;
+}
+
+#window {
+    margin: 8px;
+    padding-left: 8;
+    padding-right: 8;
+}
+
+button {
+    box-shadow: inset 0 -3px transparent;
+    border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    background: inherit;
+    color: @mauve;
+    border-top: 2px solid @mauve;
+}
+
+#workspaces button {
+    padding: 0 4px;
+}
+
+#workspaces button.focused {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: @rosewater;
+    border-top: 2px solid @rosewater;
+}
+
+#workspaces button.active {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: @mauve;
+    border-top: 2px solid @mauve;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#pulseaudio,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#wireplumber,
+#tray,
+#network,
+#mode,
+#scratchpad {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#clock {
+    color: @maroon;
+    border-bottom: 2px solid @maroon;
+}
+
+#clock.date {
+    color: @mauve;
+    border-bottom: 2px solid @mauve;
+}
+
+#pulseaudio {
+    color: @blue;
+    border-bottom: 2px solid @blue;
+}
+
+#network {
+    color: @yellow;
+    border-bottom: 2px solid @yellow;
+}
+
+#idle_inhibitor {
+    margin-right: 12px;
+    color: #7cb342;
+}
+
+#idle_inhibitor.activated {
+    color: @red;
+}
+
+#battery {
+    color: @green;
+    border-bottom: 2px solid @green;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left>widget:first-child>#workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right>widget:last-child>#workspaces {
+    margin-right: 0;
+}
+
+#custom-vpn {
+    color: @lavender;
+    border-radius: 15px;
+    padding-left: 6px;
+    padding-right: 6px;
 }
