@@ -18,7 +18,7 @@ window#waybar.hidden {
 #waybar.top > box.horizontal {
   margin-left: 10pt;
   margin-right: 10pt;
-  margin-top: 10pt;
+  margin-top: 1pt;
   background-color: rgba(0, 0, 0, 1);
   background: 
     linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)) padding-box,
