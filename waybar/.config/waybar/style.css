@@ -16,8 +16,8 @@ window#waybar.hidden {
 }
 
 #waybar.top > box.horizontal {
-  margin-left: 10pt;
-  margin-right: 10pt;
+  margin-left: 1pt;
+  margin-right: 1pt;
   margin-top: 1pt;
   background-color: rgba(0, 0, 0, 1);
   background: 
