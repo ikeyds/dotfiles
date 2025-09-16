@@ -14,6 +14,6 @@
 Window {
   margin: 0px;
   padding: 5px;
-  border: 2px solid @field-drab;
-  background-color: @ebony;
+  border: 2px solid @ebony;
+  background-color: @field-drab;
 }
