@@ -1,4 +1,4 @@
-/* COLOURS */
+/* Colours */
 @define-color celestial-blue #4595C3;
 @define-color air-superiority-blue #67A0C1;
 @define-color slate-gray #69787B;
@@ -7,3 +7,13 @@
 @define-color battleship-gray #8F9291;
 @define-color lapis-lazuli #235A7B;
 @define-color timberwolf #D6D0D0;
+@define-color field-drab #655925;
+
+
+/* Window */
+Window {
+  margin: 0px;
+  padding: 5px;
+  border: 2px solid @field-drab;
+  background-color: @ebony;
+}
