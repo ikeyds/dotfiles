@@ -24,6 +24,8 @@ window {
   border: 2px solid @gruvbox-blue;
   border-radius: 5px;
   background-color: @base;
+    background: linear-gradient(to right, red, orange);
+
 }
 
 /* Inner Box */
