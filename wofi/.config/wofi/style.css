@@ -14,14 +14,15 @@
 @define-color gruvbox-blue #458588;
 @define-color gruvbox-magenta #b16286;
 
-@define-color base /*baire*/ #0B0B05; 
+@define-color base /*baire*/ #181818; 
 
 
 /* Window */
 window {
   margin: 0px;
   padding: 5px;
-  border: 2px solid @ebony;
+  border: 2px solid @gruvbox-blue;
+  border-radius: 5px;
   background-color: @base;
 }
 
@@ -86,11 +87,11 @@ window {
 
 /* Selected Entry */
 #entry:selected {
-  border: 0.11em solid @gruvbox-magenta;
+  border: 0.11em solid @gruvbox-blue;
 }
 
 #entry:selected #text {
-  color: @gruvbox-magenta;
+  color: @gruvbox-blue;
 }
 
 #entry:drop(active) {
