@@ -95,5 +95,5 @@ window {
 }
 
 #entry:drop(active) {
-  background-color: @gruvbox-magenta!important;
+  background-color: @gruvbox-blue!important;
 }
