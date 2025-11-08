@@ -1,26 +1,16 @@
-define-color bg_dim #efebd4;
-@define-color bg0 #fdf6e3;
-@define-color bg1 #f4f0d9;
-@define-color bg2 #efebd4;
-@define-color bg3 #e6e2cc;
-@define-color bg4 #e0dcc7;
-@define-color bg5 #bdc3af;
-@define-color bg_visual #eaedc8;
-@define-color bg_red #fbe3da;
-@define-color bg_green #f0f1d2;
-@define-color bg_blue #e9f0e9;
-@define-color bg_yellow #faedcd;
-@define-color fg #5c6a72;
-@define-color red #f85552;
-@define-color orange #f57d26;
-@define-color yellow #dfa000;
-@define-color green #8da101;
-@define-color aqua #35a77c;
+@define-color cellcolor #fdf6e3; @bg0
+@define-color cellshadow #bdc3af; @bg5
+@define-color textcolor #4f5159; @test1
+@define-color windowshadow #2e3538;
+
 @define-color blue #3a94c5;
-@define-color purple #df69ba;
-@define-color grey0 #a6b0a0;
-@define-color grey1 #939f91;
-@define-color grey2 #829181;
+@define-color blueshadow #29668a;
+@define-color green #8da101;
+@define-color greenshadow #465000;
+@define-color red #f85552;
+@define-color redshadow #951c1f
+
+
 
 
 
@@ -39,9 +29,82 @@ define-color bg_dim #efebd4;
 }
 
 window#waybar {
-  background-color: @fg;
-  color: @bg0;
+  background-color: @textcolor;
+  color: @cellcolor;
   transition-property: background-color;
   transition-duration: 0.5s;
   border-radius: 0px 0px 15px 15px;
   transition-duration: .5s;
+
+  border-bottom-width: 2px;
+  border-bottom-color: @windowshadow;
+  border-bottom-style: solid;
+}
+
+#custom-launcher {
+  background-color: @green;
+  color: @cellcolor;
+
+  padding-left: 21px;
+  padding-right: 21px;
+
+  margin-left: 10px;
+  margin-top: 7px:
+  margin-bottom: 7px;
+
+  border-radius: 10px;
+  border-bottom-width: 2px;
+  border-bottom-color: @greenshadow;
+  border-bottom-style: solid;
+}
+
+#clock,
+#clock-date,
+#workspaces,
+#pulseaudio,
+#network,
+#bluetooth,
+#custom-power
+{
+  background-color: @cellcolor;
+  color: @textcolor;
+  
+  padding-left: 10px;
+  padding-right: 10px;
+
+  margin-top: 7px:
+  margin-bottom: 7px;
+
+  border-radius: 10px;
+  border-bottom-width: 2px;
+  border-bottom-color: @cellshadow;
+  border-bottom-style: solid;
+}
+
+#workspaces {
+  padding: 0px;
+}
+
+#workspaces button.active {
+  background-color : @blue;
+  color: @textcolor;
+
+  /*align active workspace tile with workspace panel */
+  margin-bottom: -2px;
+
+  border-radius: 7px;
+  border-bottom-width: 4px;
+  border-bottom-color: @blueshadow;
+  border-bottom-style: solid;
+}
+
+#custom-power {
+  background-color: @red;
+  color: @cellcolor;
+
+  border-bottom-color: @redshadow;
+
+  margin-right: 10px;
+  padding-left: 20px;
+  padding-right: 23px;
+}
