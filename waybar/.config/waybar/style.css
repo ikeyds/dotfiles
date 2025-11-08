@@ -1,6 +1,6 @@
-@define-color cellcolor #fdf6e3; @bg0
-@define-color cellshadow #bdc3af; @bg5
-@define-color textcolor #4f5159; @test1
+@define-color cellcolor #fdf6e3;
+@define-color cellshadow #bdc3af;
+@define-color textcolor #4f5159;
 @define-color windowshadow #2e3538;
 
 @define-color blue #3a94c5;
