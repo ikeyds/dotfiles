@@ -1,0 +1,77 @@
+@define-color cellcolor #fdf6e3;
+@define-color cellshadow #bdc3af;
+@define-color textcolor #4f5159;
+@define-color windowshadow #2e3538;
+
+@define-color blue #3a94c5;
+@define-color blueshadow #29668a;
+@define-color green #8da101;
+@define-color greenshadow #465000;
+@define-color red #f85552;
+@define-color redshadow #951c1f;
+
+@define-color hovercolor #f85552;
+@define-color bordercolor #3a94c5;
+
+
+* {
+    background-image: none;
+    box-shadow: none;
+}
+
+window {
+   background-color: rgba(255, 255, 255, 0.1);
+}
+
+button {
+    margin-top: 145px;
+    margin-bottom: 280px;
+
+
+    border-color: @bordercolor;
+    background-color: @textcolor;
+    border-radius: 50px 30px;
+    border-style: solid;
+    border-width: 5px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 75px;
+
+}
+
+
+#lock {
+    margin-left: 360px; 
+    margin-right: 35px;
+
+    background-image: url("icons/bluelock.png");
+}
+
+#lock:hover {
+    border-color: @hovercolor;
+    background-image: url("icons/redlock.png");
+}
+
+#reboot {
+    margin-left: 35px;
+    margin-right: 35px;
+
+    background-image: url("icons/bluereboot.png");
+}
+
+#reboot:hover {
+    border-color: @hovercolor;
+    background-image: url("icons/redreboot.png");
+}
+
+#shutdown {
+    margin-left: 35px;
+    margin-right: 360px;
+
+    background-image: url("icons/blueshutdown.png");
+}
+
+#shutdown:hover {
+    border-color: @hovercolor;
+    background-image: url("icons/redshutdown.png");
+}
